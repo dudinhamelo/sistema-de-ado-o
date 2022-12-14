@@ -1,2 +1,2 @@
-# sistema-de-ado-o
+# sistema-de-adocao
 Projeto de pcc
