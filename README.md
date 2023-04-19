@@ -1,3 +1,3 @@
 # sistema-de-adocao
 
-Projeto de pcc 2022.2
+Projeto de PCC 2022.1 / 2022.2
