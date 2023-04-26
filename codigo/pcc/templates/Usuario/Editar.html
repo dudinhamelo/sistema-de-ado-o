@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Focus Admin: Widget</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="{% static 'css/lib/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-form">
+                            <div class="register-link m-t-15">
+                                <a href="/usuario/meu-perfil/"><i class="ti-angle-double-left"></i></a>
+                            </div>
+                            <h4>Cadastro</h4>
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="id_nome">Nome </label>
+                                    <input type="text" class="form-control" placeholder="{{usuario.nome}}" name="nome" maxlength="100" required id="id_nome" value="{{usuario.nome}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_sobrenome">Sobrenome</label>
+                                    <input class="form-control" placeholder="{{usuario.sobrenome}}"  type="text" name="sobrenome" maxlength="100" required id="id_sobrenome" value="{{usuario.sobrenome}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_email">Email</label>
+                                    <input class="form-control" placeholder="{{usuario.email}}" type="email" name="email" maxlength="256" required id="id_email" value="{{usuario.email}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_telefone">Telefone</label>
+                                    <input class="form-control" placeholder="{{usuario.telefone}}" type="text" name="telefone" maxlength="15" required id="id_telefone" value="{{usuario.telefone}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_imagem">Selecione uma imagem de perfil:</label> <br>
+                                    <label><a href="/{{usuario.imagem}}">Visualizar imagem atual</a></label>
+                                    <input type="file" class="form-control" id="id_imagem" name="imagem">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Finalizar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

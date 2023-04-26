@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Focus Admin: Widget</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="{% static 'css/lib/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-form">
+                            <h4>Cadastro</h4>
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="id_username">Nome de usuario</label>
+                                    <input class="form-control" type="text" name="username" maxlength="15" autofocus required id="id_username">
+                                    <p> Obrigatório. 150 caracteres ou menos. Letras, números e @/./+/-/_ apenas.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_first_name">First name:</label>
+                                    <input class="form-control" type="text" name="first_name" maxlength="30" required id="id_first_name">
+                                </div>                                
+                                <div class="form-group">
+                                    <label for="id_last_name">Last name:</label>
+                                    <input class="form-control" type="text" name="last_name" maxlength="30" required id="id_last_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_email">Email address:</label>
+                                    <input class="form-control" type="email" name="email" maxlength="255" required id="id_email">
+                                 </div>
+                                <div class="form-group">
+                                    <label for="id_telefone">Telefone:</label>
+                                    <input class="form-control" type="text" name="telefone" maxlength="15" required id="id_telefone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_password1">Senha</label>
+                                    <input class="form-control" placeholder="Password" type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                                    <p>Sua senha não pode ser muito parecida com o resto das suas informações pessoais.<br> Sua senha precisa conter pelo menos 8 caracteres.<br>Sua senha não pode ser uma senha comumente utilizada.<br>Sua senha não pode ser inteiramente numérica.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_password2">Confirme a senha</label>
+                                    <input class="form-control" placeholder="Password" type="password"  name="password2" autocomplete="new-password" required id="id_password2">
+                                    <p>Informe a mesma senha informada anteriormente, para verificação.</p>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Cadastrar</button>
+                                <div class="register-link m-t-15 text-center">
+                                    <p>Já possui uma conta? <a href="/accounts/login/"> Faça login</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

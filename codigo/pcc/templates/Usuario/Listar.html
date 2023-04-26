@@ -1,0 +1,8 @@
+{% if usuarios %}
+    {% for i in usuarios %}
+        {{i.nome}}
+        <a href="/usuario/detalhar/{{i.id}}"><button type="button">Detalhar</button></a>
+    {% endfor %}
+{% else %}
+sem cadastros
+{% endif %}

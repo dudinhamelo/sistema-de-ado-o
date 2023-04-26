@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Focus Admin: Widget</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="{% static 'css/lib/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-form">
+                            <div class="register-link m-t-15">
+                                <a href="/animais/detalhar-2/{{animal.id}}"><i class="ti-angle-double-left"></i></a>
+                            </div>
+                            <h4>Cadastro do animal</h4>
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="id_nome">Nome:</label>
+                                    <input type="text" class="form-control" name="nome" maxlength="100" required id="id_nome" value="{{animal.nome}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_pelagem">Pelagem:</label>
+                                    <input type="text" class="form-control" name="pelagem" maxlength="100" required id="id_pelagem" value="{{animal.pelagem}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_especie">Especie:</label>
+                                    <input type="text"  class="form-control" name="especie" maxlength="100" required id="id_especie" value="{{animal.especie}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_tamanho">Tamanho:</label>
+                                    <input type="text" class="form-control" name="tamanho" maxlength="100" required id="id_tamanho" value="{{animal.tamanho}}">
+                                </div>
+                                {% if animal.sexo == "M" %}
+                                <div class="form-group">
+                                    <label for="id_sexo">Sexo</label>
+                                    <select name="sexo" required id="id_sexo"  class="form-control">
+                                        <option value="M" selected>Macho</option>
+                                        <option value="F">Fêmea</option>
+                                      </select>
+                                </div>
+                                {% else %}
+                                <div class="form-group">
+                                    <label for="id_sexo">Sexo</label>
+                                    <select name="sexo" required id="id_sexo"  class="form-control">  
+                                        <option value="M">Macho</option>
+                                        <option value="F" selected>Fêmea</option>
+                                      </select>
+                                </div>
+                                {% endif %}
+                                {% if animal.status == "Adotado" %}
+                                <div class="form-group">
+                                    <label for="id_status">Status</label>
+                                    <select name="status" required id="id_status"  class="form-control">
+                                        <option value="Adotado" selected>Adotado</option>
+                                        <option value="Nao_adotado">Não Adotado</option>
+                                    </select>
+                                </div>
+                                {% else %}
+                                <div class="form-group">
+                                    <label for="id_status">Status</label>
+                                    <select name="status" required id="id_status"  class="form-control">
+                                        <option value="Adotado">Adotado</option>
+                                        <option value="Nao_adotado" selected>Não Adotado</option>
+                                    </select>
+                                </div>
+                                {% endif %}
+                                <div class="form-group">
+                                    <label for="id_detalhes">Detalhes:</label>
+                                    <input name="detalhes" class="form-control" cols="40" rows="10" maxlength="10000" id="id_detalhes" value="{{animal.detalhes}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_imagem">Selecione uma imagem:</label> <br>
+                                    <label><a href="/{{animal.imagem}}">Visualizar imagem atual</a></label>
+                                    <input type="file" class="form-control" id="id_imagem" name="imagem">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-15">Finalizar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
