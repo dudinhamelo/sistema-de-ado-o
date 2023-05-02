@@ -52,7 +52,7 @@
                     <div class="float-right">
                         <div class="header-icon" >
                             <span class="user-avatar">
-                                <a href="/usuario/meu-perfil/" class="btn-outline btn btn-link"><i class="ti-settings"></i></a> 
+                                <a href="/accounts/meu-perfil/" class="btn-outline btn btn-link"><i class="ti-settings"></i></a> 
                             </span>
                             <span class="user-avatar"> 
                                 <a href="/accounts/logout/" class="btn-outline btn btn-link " name='Sair'><i class="ti-shift-right"></i></a>
@@ -73,7 +73,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="media align-items-center mb-4">
-                                    <img class="mr-3" src="/{{usuario.imagem}}" width="60" height="60" alt="">
+                                    <img class="mr-3" src="/{{u.imagem}}" width="60" height="60" alt="">
                                 </div>
                             </div>
                         </div>  
@@ -82,11 +82,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="media-body">
-                                    <h3 class="mb-0">{{usuario.nome}} {{usuario.sobrenome}}</h3>
+                                    <h3 class="mb-0">{{u.nome}} {{u.sobrenome}}</h3>
                                 </div>
-                                <p>Email: {{usuario.email}}</p>
-                                <p>Telefone: {{usuario.telefone}}</p>
-                                <a class="btn btn-secondary px-3 ml-4" href='/usuario/editar/'>Editar</a>
+                                <p>Email: {{u.email}}</p>
+                                <p>Telefone: {{u.telefone}}</p>
+                                <a class="btn btn-secondary px-3 ml-4" href='/accounts/editar/'>Editar</a>
                                 <a class="btn btn-secondary px-3 ml-4" href='/accounts/password_change/'>Mudar senha</a>
                             </div>
                         </div>

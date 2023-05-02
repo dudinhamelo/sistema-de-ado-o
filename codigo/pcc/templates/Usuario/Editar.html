@@ -45,24 +45,19 @@
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <label for="id_nome">Nome </label>
-                                    <input type="text" class="form-control" placeholder="{{usuario.nome}}" name="nome" maxlength="100" required id="id_nome" value="{{usuario.nome}}">
+                                    <input type="text" class="form-control" placeholder="{{u.first_name}}" name="first_name" maxlength="100" required id="id_first_name" value="{{u.first_name}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="id_sobrenome">Sobrenome</label>
-                                    <input class="form-control" placeholder="{{usuario.sobrenome}}"  type="text" name="sobrenome" maxlength="100" required id="id_sobrenome" value="{{usuario.sobrenome}}">
+                                    <input class="form-control" placeholder="{{u.last_name}}"  type="text" name="last_name" maxlength="100" required id="id_last_name" value="{{u.last_name}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="id_email">Email</label>
-                                    <input class="form-control" placeholder="{{usuario.email}}" type="email" name="email" maxlength="256" required id="id_email" value="{{usuario.email}}">
+                                    <input class="form-control" placeholder="{{u.email}}" type="email" name="email" maxlength="256" required id="id_email" value="{{u.email}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="id_telefone">Telefone</label>
-                                    <input class="form-control" placeholder="{{usuario.telefone}}" type="text" name="telefone" maxlength="15" required id="id_telefone" value="{{usuario.telefone}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="id_imagem">Selecione uma imagem de perfil:</label> <br>
-                                    <label><a href="/{{usuario.imagem}}">Visualizar imagem atual</a></label>
-                                    <input type="file" class="form-control" id="id_imagem" name="imagem">
+                                    <input class="form-control" placeholder="{{u.telefone}}" type="text" name="telefone" maxlength="15" required id="id_telefone" value="{{u.telefone}}">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Finalizar</button>
                             </form>
