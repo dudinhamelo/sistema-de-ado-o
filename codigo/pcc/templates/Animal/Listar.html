@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- theme meta -->
     <meta name="theme-name" content="focus" />
-    <title>Focus Admin: Creative Admin Dashboard</title>
+    <title>AdotaPet</title>
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
@@ -41,6 +41,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="header-icon" >
+                            <span class="user-avatar">
+                                <h4>AdotaPet</h4>
+                            </span>
+                        </div>
+                    </div>
                     <div class="float-right">
                         <div class="header-icon" >
                             <span class="user-avatar">
@@ -93,7 +100,7 @@
                                         <div class="stat-content dib">
                                             <div class="card-title"><h4>{{i.nome}}</h4></div>
                                             <a href="/animais/detalhar/{{i.id}}"><button type="button" class="btn btn-default btn-sm btn-outline m-b-10">Detalhar</button></a>
-                                            <a href=""><button type="button" class="btn btn-default btn-outline m-b-10 btn-sm">Adotar</button></a>
+                                            <a href="/ong/detalhar/{{i.ong.id}}"><button type="button" class="btn btn-default btn-outline m-b-10 btn-sm">Adotar</button></a>
                                         </div>
                                     </div>
                                 </div>
