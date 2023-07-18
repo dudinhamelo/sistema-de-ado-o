@@ -34,7 +34,7 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: rgb(253, 237, 232);">
 
     <!-- /# sidebar -->
 
@@ -90,7 +90,7 @@
                                 <p>Tamanho: {{animal.tamanho}}</p>
                                 <p>Sexo: {{animal.sexo}}</p>
                                 <p>Detalhes: {{animal.detalhes}}</p>
-                                <a class="btn btn-secondary px-3 ml-4" href='/ong/detalhar/{{animal.ong.id}}'>Adotar</a>
+                                <a class="btn btn-secondary px-3 ml-4" href='/animais/adotar/{{animal.id}}'>Adotar</a>
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: rgb(253, 237, 232);">
 
     <!-- /# sidebar -->
 
@@ -100,7 +100,7 @@
                                         <div class="stat-content dib">
                                             <div class="card-title"><h4>{{i.nome}}</h4></div>
                                             <a href="/animais/detalhar/{{i.id}}"><button type="button" class="btn btn-default btn-sm btn-outline m-b-10">Detalhar</button></a>
-                                            <a href="/ong/detalhar/{{i.ong.id}}"><button type="button" class="btn btn-default btn-outline m-b-10 btn-sm">Adotar</button></a>
+                                            <a href="/animais/adotar/{{i.id}}"><button type="button" class="btn btn-default btn-outline m-b-10 btn-sm">Adotar</button></a>
                                         </div>
                                     </div>
                                 </div>
