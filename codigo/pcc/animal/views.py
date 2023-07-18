@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.decorators import login_required
 from .forms import AdicionarAnimal
 from .models import Animal
 from ONG.models import ONG
+from ONG.views import Detalhar
 from user.models import Usuario
 import os 
 
@@ -49,7 +50,7 @@ def Editar(request, id_animal):
 def Listar(request):
     #u = request.Usuario
     #usuario_atual = get_object_or_404(Usuario, user=u)
-    animais = Animal.objects.all()
+    animais = Animal.objects.filter(status = 'Nao_adotado')
     return render(request, 'Animal/Listar.html', {'animais': animais})
 
 @login_required
@@ -74,3 +75,9 @@ def Deletar(request, id_animal):
     Animal.objects.get(pk=id_animal).delete()
     return redirect('/accounts/')
 
+@login_required
+def Adotar(request, id_animal):
+    animal = Animal.objects.get(pk=id_animal)
+    animal.status = 'Adotado'
+    animal.save()
+    return redirect('/accounts/')

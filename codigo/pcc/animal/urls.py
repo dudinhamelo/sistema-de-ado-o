@@ -9,5 +9,6 @@ urlpatterns = [
     path('detalhar/<int:id_animal>', views.Detalhar, name='Detalhar'),
     path('detalhar-2/<int:id_animal>', views.Detalhar2, name='Detalhar2'),
     path('deletar/<int:id_animal>', views.Deletar, name='Deletar'),
+    path('adotar/<int:id_animal>', views.Adotar, name='Adotar'),
     path('', views.ListarparaONG, name='ListarparaONG')
 ]
